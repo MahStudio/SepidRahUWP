@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/DotButton/DotButton.xaml"/>
                 <ResourceDictionary Source="/Styles/HamburgerMenu/HMemu.xaml"/>
+                <ResourceDictionary Source="/Styles/Slider.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
