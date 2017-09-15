@@ -5,8 +5,10 @@
     xmlns:local="using:Sepidrah.UWP.Views.BaseSubpages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    mc:Ignorable="d" FontFamily="/Fonts/IRANSans-Medium-web.ttf#IRANSans">
 
+    
     <Grid FlowDirection="RightToLeft" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <RelativePanel Margin="0,15,0,0">
@@ -61,6 +63,22 @@
                    RelativePanel.AlignRightWithPanel="True"
                    RelativePanel.Below="g1"
                    />
+            <charting:Chart
+                RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.Below="txt2"
+                x:Name="ColumnChart"
+                Title="Column Chart"
+                Margin="70,0">
+                <charting:Chart.Series>
+                    <charting:ColumnSeries
+                        Title="Population"
+                        ItemsSource="{Binding Items}"
+                        IndependentValueBinding="{Binding Name}"
+                        DependentValueBinding="{Binding Value}"
+                        IsSelectionEnabled="True" />
+                </charting:Chart.Series>
+            </charting:Chart>
             
 
 

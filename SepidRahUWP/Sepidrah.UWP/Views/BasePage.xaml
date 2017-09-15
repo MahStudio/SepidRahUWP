@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    FontFamily="/Fonts/IRANSans-Medium-web.ttf#IRANSans">
 
     <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel>
@@ -739,7 +740,7 @@
                 </Grid>
                 <StackPanel FlowDirection="RightToLeft" VerticalAlignment="Center" Margin="0,0,70,0">
                     <TextBlock x:Name="WhereIam" FontWeight="SemiBold" FontSize="16" Text="خانه" />
-                    <TextBlock Opacity="0.8" Text="25 شهریور" />
+                    <TextBlock Opacity="0.8" FontSize="12" Text="25 شهریور" />
                 </StackPanel>
                 <Button Content="" VerticalAlignment="Center" Style="{StaticResource pivotheaderstyle}" Height="48" HorizontalAlignment="Left" Margin="0" Padding="0" Width="50">
                     <Button.Flyout>
