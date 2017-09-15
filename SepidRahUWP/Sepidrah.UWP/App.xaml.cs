@@ -8,6 +8,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -25,6 +26,8 @@ namespace Sepidrah.UWP
     /// </summary>
     sealed partial class App : Application
     {
+        public static readonly string ApiKey = "Sepidrah_UWP";
+        public static readonly string APIHash = "53d6754fb254783d26f8b3224c6719897159420aa33ab3e439306af8c1e9c464";
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -105,7 +108,13 @@ namespace Sepidrah.UWP
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(Views.Welcome), e.Arguments);
+                    if (ApplicationData.Current.LocalSettings.Values["logged"] == null)
+                        rootFrame.Navigate(typeof(Views.Welcome), e.Arguments);
+                    else if ((bool)ApplicationData.Current.LocalSettings.Values["logged"]==true )
+                        rootFrame.Navigate(typeof(Views.BasePage), e.Arguments);
+                    else
+                        rootFrame.Navigate(typeof(Views.Welcome), e.Arguments);
+
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

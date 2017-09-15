@@ -20,9 +20,9 @@
                 این سپید راه است! نرم افزاری که ساخته شده برای داشتن یک زندگی با هوای پاک!
                 
             </TextBlock>
-            <Button x:Name="login" Margin="0,40,0,0" HorizontalAlignment="Center" Content="ورود" Foreground="Black"
+            <Button x:Name="login" Click="login_Click" Margin="0,40,0,0" HorizontalAlignment="Center" Content="ورود" Foreground="Black"
              Style="{StaticResource dotbut2}" Width="300" Height="50" />
-            <Button x:Name="register" Margin="0,30,0,0" HorizontalAlignment="Center" Content="ثبت نام" Foreground="Black"
+            <Button x:Name="register" Click="register_Click" Margin="0,30,0,0" HorizontalAlignment="Center" Content="ثبت نام" Foreground="Black"
              Style="{StaticResource dotbut2}" Width="300" Height="50" />
         </StackPanel>
     </Grid>

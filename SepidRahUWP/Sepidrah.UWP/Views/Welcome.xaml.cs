@@ -26,5 +26,15 @@ namespace Sepidrah.UWP.Views
         {
             this.InitializeComponent();
         }
+
+        private void login_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(LoginPage));
+        }
+
+        private void register_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RegisterPage));
+        }
     }
 }
