@@ -724,7 +724,7 @@
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{Binding ActualWidth, ElementName=dropShadowPanel, Mode=TwoWay}" Background="White"/>
                     </controls:DropShadowPanel>
                 </Grid>
-                <Grid Margin="0,0,3,0" HorizontalAlignment="Right">
+                <Grid Margin="0,0,10,0" HorizontalAlignment="Right">
                     
                     <Ellipse   HorizontalAlignment="Right" Height="50"  Width="50" >
                         <Ellipse.Fill>
@@ -737,11 +737,11 @@
 
                     
                 </Grid>
-                <StackPanel FlowDirection="RightToLeft" VerticalAlignment="Center" Margin="0,0,60,0">
+                <StackPanel FlowDirection="RightToLeft" VerticalAlignment="Center" Margin="0,0,70,0">
                     <TextBlock x:Name="WhereIam" FontWeight="SemiBold" FontSize="16" Text="خانه" />
                     <TextBlock Opacity="0.8" Text="25 شهریور" />
                 </StackPanel>
-                <Button Content="" Style="{StaticResource pivotheaderstyle}" Height="48" HorizontalAlignment="Left" Margin="0" Padding="0" Width="50">
+                <Button Content="" VerticalAlignment="Center" Style="{StaticResource pivotheaderstyle}" Height="48" HorizontalAlignment="Left" Margin="0" Padding="0" Width="50">
                     <Button.Flyout>
                         <Flyout>
                             <StackPanel Orientation="Vertical" Width="40">
