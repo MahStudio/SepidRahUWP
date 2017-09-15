@@ -36,12 +36,14 @@ namespace SepidRahUWP.Views
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async delegate
             {
-                var http = new HttpClient();
-                http.DefaultRequestHeaders.Accept
-      .Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                http.DefaultRequestHeaders.Add("apikey", App.ApiKey);
-                http.DefaultRequestHeaders.Add("apihash", App.APIHash);
-                var res = await http.PostAsync("https://xugros.net/V0/auth/signin", new StringContent(JsonConvert.SerializeObject(new { email = EmailBox.Text, pass = PasswordBox.Password }), Encoding.UTF8, "application/json"));
+      //          var http = new HttpClient();
+      //          http.DefaultRequestHeaders.Accept
+      //.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+      //          http.DefaultRequestHeaders.Add("apikey", App.ApiKey);
+      //          http.DefaultRequestHeaders.Add("apihash", App.APIHash);
+      //          var res = await http.PostAsync("https://xugros.net/V0/auth/signin", new StringContent(JsonConvert.SerializeObject(new { email = EmailBox.Text, pass = PasswordBox.Password }), Encoding.UTF8, "application/json"));
+                Frame.BackStack.Clear();
+                Frame.Navigate(typeof(MainPage));
             });
         }
 
