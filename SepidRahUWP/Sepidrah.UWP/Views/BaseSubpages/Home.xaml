@@ -7,7 +7,65 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid FlowDirection="RightToLeft" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <RelativePanel Margin="0,15,0,0">
+        <TextBlock x:Name="txt1" Text="کیفیت هوای امروز"  FontSize="15" Margin="10,0,0,0"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                   RelativePanel.AlignTopWithPanel="True"
+                   />
+            <Grid Height="170" x:Name="g1"
+                RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.Below="txt1"
+                >
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Orientation="Horizontal">
+                    <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="25" VerticalAlignment="Center" Text="سالم"/>
+                    <TextBlock Foreground="#f2de33"  FontSize="55" VerticalAlignment="Center" Text="22"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" VerticalAlignment="Center" Text="CO"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" HorizontalAlignment="Center" Text="SO2"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                    </StackPanel>
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" VerticalAlignment="Center" Text="NO2"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" HorizontalAlignment="Center" Text="O3"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                    </StackPanel>
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" VerticalAlignment="Center" Text="PM10"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#74f374" Margin="0,10,0,0" FontSize="20" HorizontalAlignment="Center" Text="PM25"/>
+                        <TextBlock Foreground="#74f374"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+            <TextBlock x:Name="txt2" Text="کیفیت هوای هفته"  FontSize="15" Margin="10,10,0,0"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                   RelativePanel.Below="g1"
+                   />
+            
+
+
+
+
+        </RelativePanel>
     </Grid>
 </Page>
