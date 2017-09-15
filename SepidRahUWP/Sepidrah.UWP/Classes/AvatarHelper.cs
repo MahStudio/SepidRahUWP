@@ -16,21 +16,23 @@ namespace Sepidrah.UWP.Classes
             {
                 try
                 {
-                    var em = Windows.Storage.ApplicationData.Current.LocalSettings.Values["email"].ToString();
-                    var hash = CalculateMD5Hash(em);
-                    return new BitmapImage(new Uri($"https://www.gravatar.com/avatar/{hash}", UriKind.RelativeOrAbsolute));
+                    var em = Windows.Storage.ApplicationData.Current.LocalSettings.Values["Email"].ToString();
+                    var hash = CalculateMD5Hash(em).ToLower();
+                    string addrs = $"https://www.gravatar.com/avatar/{hash}";
+                    return new BitmapImage(new Uri(addrs, UriKind.RelativeOrAbsolute));
                 }
                 catch (Exception ex)
                 {
-                    return new BitmapImage(new Uri($"ms-appx:///Assets/LockScreenLogo.scale-200.png", UriKind.RelativeOrAbsolute));
+                    return new BitmapImage(new Uri($"ms-appx:///Assets/Mockups/usrimg.jpg", UriKind.RelativeOrAbsolute));
                 }
             }
             else
             {
 
                 var em = email;
-                var hash = CalculateMD5Hash(em);
-                return new BitmapImage(new Uri($"https://www.gravatar.com/avatar/{hash}", UriKind.RelativeOrAbsolute));
+                var hash = CalculateMD5Hash(em).ToLower() ;
+                string addrs = $"https://www.gravatar.com/avatar/{hash}";
+                return new BitmapImage(new Uri(addrs, UriKind.RelativeOrAbsolute));
             }
         }
         private static string CalculateMD5Hash(string input)

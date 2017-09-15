@@ -1,4 +1,5 @@
 ﻿using PubSub;
+using Sepidrah.UWP.Classes;
 using Sepidrah.UWP.Views.BaseSubpages;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,8 +36,8 @@ namespace Sepidrah.UWP.Views
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
-
+            var a = ApplicationData.Current.LocalSettings.Values["Email"];
+            Immmg.ImageSource = AvatarHelper.GenerateAvatar(a.ToString());
 
             #region navigation
 

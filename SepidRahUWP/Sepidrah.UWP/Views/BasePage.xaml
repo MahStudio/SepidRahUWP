@@ -729,7 +729,7 @@
                     
                     <Ellipse   HorizontalAlignment="Right" Height="50"  Width="50" >
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="ms-appx:///Assets/Mockups/usrimg.jpg" Stretch="UniformToFill" x:Name="avatar"  />
+                            <ImageBrush x:Name="Immmg" ImageSource="ms-appx:///Assets/Mockups/usrimg.jpg" Stretch="UniformToFill"  />
                         </Ellipse.Fill>
                     </Ellipse>
 

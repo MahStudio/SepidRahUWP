@@ -99,6 +99,7 @@
     <Compile Include="Classes\CurrentWeather.cs" />
     <Compile Include="Entities\NameValueItem.cs" />
     <Compile Include="Entities\ResponseBase.cs" />
+    <Compile Include="Entities\VMUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>

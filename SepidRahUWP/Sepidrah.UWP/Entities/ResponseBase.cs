@@ -25,7 +25,14 @@ namespace Sepidrah.UWP.Entities
             }
         }
         [JsonProperty("data")]
-        public dynamic Data { get; set; }
+        public Dat Data { get; set; }
+    }
+    public class Dat
+    {
+        [JsonProperty("token")]
+        public string Token { get; set; }
+        [JsonProperty("user")]
+        public VMUserLevelOne User { get; set; }
     }
     public enum Status
     {

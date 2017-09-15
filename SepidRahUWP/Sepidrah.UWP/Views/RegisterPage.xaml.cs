@@ -50,10 +50,10 @@ namespace Sepidrah.UWP.Views
                 {
                     case Status.OK:
                         ApplicationData.Current.LocalSettings.Values["logged"] = true;
-                        ApplicationData.Current.LocalSettings.Values["Token"] = (string)(jr.Data).token;
-                        ApplicationData.Current.LocalSettings.Values["Email"] = (string)(jr.Data).email;
-                        ApplicationData.Current.LocalSettings.Values["Name"] = (string)(jr.Data).name;
-                        ApplicationData.Current.LocalSettings.Values["Lastname"] = (string)(jr.Data).lastname;
+                        ApplicationData.Current.LocalSettings.Values["Token"] = jr.Data.Token;
+                        ApplicationData.Current.LocalSettings.Values["Email"] = jr.Data.User.Email;
+                        ApplicationData.Current.LocalSettings.Values["Name"] = jr.Data.User.Name;
+                        ApplicationData.Current.LocalSettings.Values["Lastname"] = jr.Data.User.LastName;
                         Frame.BackStack.Clear();
                         Frame.Navigate(typeof(BasePage));
                         break;
