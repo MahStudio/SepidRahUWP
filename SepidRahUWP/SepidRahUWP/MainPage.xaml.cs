@@ -1,4 +1,5 @@
 ﻿using SepidRahUWP.Views;
+using SepidRahUWP.Views.RegisterView;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -46,7 +47,7 @@ namespace SepidRahUWP
             }
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, delegate
             {
-                rootframe.Navigate(typeof(MapView));
+                rootframe.Navigate(typeof(LoginView));
             });
         }
 

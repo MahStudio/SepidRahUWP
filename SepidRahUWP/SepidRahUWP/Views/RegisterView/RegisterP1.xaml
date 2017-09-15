@@ -19,15 +19,19 @@
 
         <Grid x:Name="LoginGrid" Grid.Row="1">
             <StackPanel x:Name="LoginBoxesStack" VerticalAlignment="Center" Padding="10,0">
-                <TextBox x:Name="UsernameBox" Header="Username" PlaceholderText="Enter your username">
+                <TextBox x:Name="NameBox" Header="Name" PlaceholderText="Enter your name">
 
                 </TextBox>
 
+                <TextBox x:Name="LastNameBox" Header="Last Name" PlaceholderText="Enter your last name">
+
+                </TextBox>
+                
                 <PasswordBox x:Name="PasswordBox" Header="Password" PlaceholderText="Enter your Password" InputScope="NumericPin">
 
                 </PasswordBox>
 
-                <TextBox x:Name="PhoneNumber" Header="Phone Number" PlaceholderText="+989XXXXXXXXX" >
+                <TextBox x:Name="EmailBox" Header="Email" PlaceholderText="yourmail@yourdomain.com" >
 
                 </TextBox>
 
@@ -35,7 +39,7 @@
         </Grid>
 
         <Grid x:Name="LoginButtonGrid" Grid.Row="2" BorderThickness="0,3,0,0" BorderBrush="LightBlue">
-            <Button x:Name="LoginButton" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Next"/>
+            <Button x:Name="LoginButton" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Next" Click="LoginButton_Click"/>
         </Grid>
 
     </Grid>
