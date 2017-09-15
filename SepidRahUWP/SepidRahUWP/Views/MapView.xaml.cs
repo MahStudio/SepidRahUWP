@@ -66,13 +66,14 @@ namespace SepidRahUWP.Views
                 case GeolocationAccessStatus.Allowed:
                     Geolocator geolocator = new Geolocator() { DesiredAccuracy = PositionAccuracy.High };
                     // Carry out the operation.
-                    //Geoposition pos = await geolocator.GetGeopositionAsync();
+                    Geoposition pos = await geolocator.GetGeopositionAsync();
 
-                    //Geopoint myPoint = new Geopoint(new BasicGeoposition() { Latitude = pos.Coordinate.Latitude, Longitude = pos.Coordinate.Longitude });
-                    //MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "My position" };
+                    Geopoint myPoint = new Geopoint(new BasicGeoposition() { Latitude = pos.Coordinate.Latitude, Longitude = pos.Coordinate.Longitude });
+                    MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "My position" };
                     //// add to map and center it
-                    //Map.MapElements.Add(myPOI);
-                    //Map.Center = myPoint;
+                    Map.MapElements.Add(myPOI);
+                    Map.Center = myPoint;
+                    Map.ZoomLevel = 13;
                     var sf = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DataSampleProvider/json.txt", UriKind.RelativeOrAbsolute));
                     var st = await FileIO.ReadTextAsync(sf);
                     var lst = JsonConvert.DeserializeObject<List<StationInfo>>(st);

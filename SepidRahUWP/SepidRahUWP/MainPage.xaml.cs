@@ -47,7 +47,7 @@ namespace SepidRahUWP
             }
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, delegate
             {
-                rootframe.Navigate(typeof(LoginView));
+                rootframe.Navigate(typeof(MapView));
             });
         }
 
