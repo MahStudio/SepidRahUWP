@@ -8,52 +8,52 @@
     xmlns:charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
     mc:Ignorable="d" FontFamily="/Fonts/IRANSans-Medium-web.ttf#IRANSans">
 
-    
-    <Grid FlowDirection="RightToLeft" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <RelativePanel Margin="0,15,0,0">
-        <TextBlock x:Name="txt1" Text="کیفیت هوای امروز"  FontSize="15" Margin="10,0,0,0"
+    <Grid FlowDirection="RightToLeft" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer Margin="0,15,0,0">
+        <RelativePanel >
+            <TextBlock x:Name="txt1" Text="کیفیت هوای امروز"  FontSize="15" Margin="10,0,0,0"
                    RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
                    />
-            <Grid Height="170" x:Name="g1"
+            <Grid Height="190" x:Name="g1"
                 RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
                 RelativePanel.Below="txt1"
                 >
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Orientation="Horizontal">
                     <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="25" VerticalAlignment="Center" Text="سالم"/>
-                    <TextBlock Foreground="#f2de33"  FontSize="55" VerticalAlignment="Center" Text="22"/>
+                    <TextBlock Foreground="#f2de33"  FontSize="50" VerticalAlignment="Center" Text="66"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
 
                     <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
-                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" VerticalAlignment="Center" Text="CO"/>
-                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="19" VerticalAlignment="Center" Text="CO"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="20" HorizontalAlignment="Center" Text="32"/>
                     </StackPanel>
 
                     <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
-                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" HorizontalAlignment="Center" Text="SO2"/>
-                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="19" HorizontalAlignment="Center" Text="SO2"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="20" HorizontalAlignment="Center" Text="32"/>
                     </StackPanel>
                     <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
-                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" VerticalAlignment="Center" Text="NO2"/>
-                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
-                    </StackPanel>
-
-                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
-                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" HorizontalAlignment="Center" Text="O3"/>
-                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
-                    </StackPanel>
-                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
-                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="20" VerticalAlignment="Center" Text="PM10"/>
-                        <TextBlock Foreground="#f2de33"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="19" VerticalAlignment="Center" Text="NO2"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="20" HorizontalAlignment="Center" Text="31"/>
                     </StackPanel>
 
                     <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
-                        <TextBlock Foreground="#74f374" Margin="0,10,0,0" FontSize="20" HorizontalAlignment="Center" Text="PM25"/>
-                        <TextBlock Foreground="#74f374"  FontSize="25" HorizontalAlignment="Center" Text="22"/>
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="19" HorizontalAlignment="Center" Text="O3"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="20" HorizontalAlignment="Center" Text="45"/>
+                    </StackPanel>
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="19" VerticalAlignment="Center" Text="PM10"/>
+                        <TextBlock Foreground="#f2de33"  FontSize="20" HorizontalAlignment="Center" Text="31"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="11" VerticalAlignment="Top" HorizontalAlignment="Center"  Orientation="Vertical">
+                        <TextBlock Foreground="#74f374" Margin="0,10,0,0" FontSize="19" HorizontalAlignment="Center" Text="PM25"/>
+                        <TextBlock Foreground="#74f374"  FontSize="20" HorizontalAlignment="Center" Text="25"/>
                     </StackPanel>
 
                 </StackPanel>
@@ -63,27 +63,44 @@
                    RelativePanel.AlignRightWithPanel="True"
                    RelativePanel.Below="g1"
                    />
-            <charting:Chart
+            <StackPanel x:Name="Charts" Orientation="Horizontal" HorizontalAlignment="Center" 
                 RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
                 RelativePanel.Below="txt2"
-                x:Name="ColumnChart"
-                Title="Column Chart"
-                Margin="70,0">
-                <charting:Chart.Series>
-                    <charting:ColumnSeries
-                        Title="Population"
-                        ItemsSource="{Binding Items}"
-                        IndependentValueBinding="{Binding Name}"
-                        DependentValueBinding="{Binding Value}"
-                        IsSelectionEnabled="True" />
-                </charting:Chart.Series>
-            </charting:Chart>
-            
+                Height="210">
+
+
+
+                <Rectangle Margin="10,0" VerticalAlignment="Bottom" Height="200" Width="20" Fill="#ff6c6c" />
+                <Rectangle Margin="10,0" VerticalAlignment="Bottom" Height="100" Width="20" Fill="#e4e52d" />
+                <Rectangle Margin="10,0" VerticalAlignment="Bottom" Height="80" Width="20" Fill="#e4e52d" />
+                <Rectangle Margin="10,0" VerticalAlignment="Bottom" Height="120" Width="20" Fill="#e4e52d" />
+                <Rectangle Margin="10,0" VerticalAlignment="Bottom" Height="20" Width="20" Fill="#14e514" />
+                <Rectangle Margin="10,0" VerticalAlignment="Bottom" Height="190" Width="20" Fill="#ff6c6c" />
+                <Rectangle Margin="10,0" VerticalAlignment="Bottom" Height="70" Width="20" Fill="#14e514" />
+
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                         RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.Below="Charts"
+                        >
+                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#ff6c6c" />
+                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#e4e52d" />
+                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#e4e52d" />
+                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#e4e52d" />
+                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#14e514"/>
+                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#ff6c6c" />
+                <TextBlock Text="70" Margin="10,0" Width="20" Foreground="#14e514"/>
+            </StackPanel>
+
 
 
 
 
         </RelativePanel>
+        </ScrollViewer>
     </Grid>
 </Page>

@@ -34,7 +34,9 @@ namespace Sepidrah.UWP.Views.BaseSubpages
             items.Add(new NameValueItem { Name = "Test3", Value = _random.Next(10, 100) });
             items.Add(new NameValueItem { Name = "Test4", Value = _random.Next(10, 100) });
             items.Add(new NameValueItem { Name = "Test5", Value = _random.Next(10, 100) });
-            ((ColumnSeries)this.ColumnChart.Series[0]).ItemsSource = items;
+            items.Add(new NameValueItem { Name = "Test4", Value = _random.Next(10, 100) });
+            items.Add(new NameValueItem { Name = "Test5", Value = _random.Next(10, 100) });
+            
         }
     }
 }
