@@ -1,0 +1,290 @@
+﻿[
+    {
+        "stationId": 1,
+        "stationName": "شریف- منطقه 2",
+        "latitude": 35.70227,
+        "longitude": 51.35094,
+        "address": "دانشگاه صنعتی شریف، جنب کارگاه های آموزشی",
+        "region": "2"
+    },
+    {
+        "stationId": 5,
+        "stationName": "پیروزی- منطقه 13",
+        "latitude": 35.69599,
+        "longitude": 51.49376,
+        "address": "انتهای خیابان پیروزی، جنب پارک پیروزی، خدمات شهری",
+        "region": "13"
+    },
+    {
+        "stationId": 6,
+        "stationName": "اقدسیه- منطقه 1",
+        "latitude": 35.79587,
+        "longitude": 51.48414,
+        "address": "میدان نوبنیاد خیابان شهید لنگری، داخل سازمان هواشناسی",
+        "region": "1"
+    },
+    {
+        "stationId": 7,
+        "stationName": "پونک",
+        "latitude": 35.7623,
+        "longitude": 51.33168,
+        "address": "میدان پونک، خیابان عدل، پارک ترافیک",
+        "region": "2"
+    },
+    {
+        "stationId": 8,
+        "stationName": "شهرداری منطقه  2",
+        "latitude": 35.777089,
+        "longitude": 51.368175,
+        "address": "سعادت آباد، بلوار شهرداری ، داخل محوطه شهرداری منطقه 2",
+        "region": "2"
+    },
+    {
+        "stationId": 9,
+        "stationName": "گلبرگ- منطقه 8",
+        "latitude": 35.73103,
+        "longitude": 51.50613,
+        "address": "بزرگراه رسالت، خیابان دردشت، خیابان 72 شرقی اندیشه سرای گلبرگ",
+        "region": "8"
+    },
+    {
+        "stationId": 10,
+        "stationName": "مسعودیه- منطقه 15",
+        "latitude": 35.63003,
+        "longitude": 51.49902,
+        "address": "شهرک مسعودیه، میدان شیرازی، ناحیه 6 شهرداری منطقه 15",
+        "region": "15"
+    },
+    {
+        "stationId": 11,
+        "stationName": "شهرداری منطقه  4",
+        "latitude": 35.74182,
+        "longitude": 51.50643,
+        "address": "خیابان هنگام، ابتدای خیابان طاهر خانی، داخل محوطه شهرداری منطقه 4",
+        "region": "4"
+    },
+    {
+        "stationId": 12,
+        "stationName": "شهر ری- منطقه 20",
+        "latitude": 35.60363,
+        "longitude": 51.42571,
+        "address": "ميدان نماز، فرهنگسرای ولاء",
+        "region": "20"
+    },
+    {
+        "stationId": 13,
+        "stationName": "پارک رز- منطقه22",
+        "latitude": 35.73989,
+        "longitude": 51.26789,
+        "address": "انتهای اتوبان شهید حکیم، داخل محوطه پارک رز",
+        "region": "22"
+    },
+    {
+        "stationId": 14,
+        "stationName": "ستاد بحران- منطقه 7",
+        "latitude": 35.72708,
+        "longitude": 51.4312,
+        "address": "خیابان مطهری، بعد از خیابان مفتح، خیابان اکبری، داخل محوطه ستاد بحران",
+        "region": "7"
+    },
+    {
+        "stationId": 15,
+        "stationName": "شهرداری منطقه 16",
+        "latitude": 35.644584,
+        "longitude": 51.397657,
+        "address": "میدان بهمن، داخل محوطه شهرداری منطقه 16",
+        "region": "16"
+    },
+    {
+        "stationId": 16,
+        "stationName": "شهرداری منطقه 10",
+        "latitude": 35.69748,
+        "longitude": 51.35803,
+        "address": "تقاطع بزرگراه یادگار امام و خیابان آزادی، داخل ورزشگاه یادگار امام",
+        "region": "10"
+    },
+    {
+        "stationId": 17,
+        "stationName": "شهرداری منطقه 11",
+        "latitude": 35.67298,
+        "longitude": 51.38973,
+        "address": "خیابان قزوین، داخل محوطه شهرداری منطقه 11",
+        "region": "11"
+    },
+    {
+        "stationId": 18,
+        "stationName": "شهرداری منطقه 19",
+        "latitude": 35.63521,
+        "longitude": 51.36252,
+        "address": "عبدل آباد ، میدان ماهان ، خیابان ماهان، داخل محوطه مدیریت بحران",
+        "region": "19"
+    },
+    {
+        "stationId": 19,
+        "stationName": "شهرداری منطقه 21",
+        "latitude": 35.697773,
+        "longitude": 51.24311,
+        "address": "شهرک استقلال، خیابان عبیدی، داخل محوطه ساختمان چند منظوره ستاد بحران منطقه 21",
+        "region": "21"
+    },
+    {
+        "stationId": 20,
+        "stationName": "میدان فتح- منطقه 9",
+        "latitude": 35.67882,
+        "longitude": 51.33753,
+        "address": "میدان آزادي، میدان فتح، داخل ستاد مديريت بحران",
+        "region": "9"
+    },
+    {
+        "stationId": 21,
+	"stationName": "اتوبان محلاتی- منطقه 14",
+        "latitude": 35.661083,
+        "longitude": 51.46636,
+        "address": "اتوبان شهید محلاتی، خیابان نبرد- خیابان میثم ناحیه 5",
+        "region": "14"
+    },
+    {
+        "stationId": 22,
+        "stationName": "شاد آباد- منطقه 18",
+        "latitude": 35.67005,
+        "longitude": 51.29735,
+        "address": "بزرگراه فتح، بلوار الغدیر، بلوار 17 شهریور، ناحیه 4 شهرداری منطقه 18",
+        "region": "18"
+    },
+    {
+        "stationId": 24,
+        "stationName": "سوهانک- منطقه 1",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "1"
+    },
+    {
+        "stationId": 26,
+        "stationName": "میدان امام خمینی- منطقه 12",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": ""
+    },
+    {
+        "stationId": 27,
+        "stationName": "ژئوفیزیک- منطقه 6",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "6"
+    },
+    {
+        "stationId": 28,
+        "stationName": "پارک رازی- منطقه 11",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "11"
+    },
+    {
+        "stationId": 29,
+        "stationName": "پارک سلامت- منطقه 17",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "17"
+    },
+    {
+        "stationId": 30,
+        "stationName": "پارک شکوفه- منطقه 14",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "14"
+    },
+    {
+        "stationId": 31,
+        "stationName": "پارک قائم- منطقه 18",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "18"
+    },
+    {
+        "stationId": 32,
+        "stationName": "پاسداران- منطقه 3",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "3"
+    },
+    {
+        "stationId": 33,
+        "stationName": "پردیسان- منطقه 2",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "2"
+    },
+    {
+        "stationId": 34,
+        "stationName": "دانشگاه شهید بهشتی- منطقه 1",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "1"
+    },
+    {
+        "stationId": 35,
+        "stationName": "دانشگاه علم و صنعت- منطقه 4",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "4"
+    },
+    {
+        "stationId": 36,
+        "stationName": "سرخه حصار- منطقه 13",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "13"
+    },
+    {
+        "stationId": 37,
+        "stationName": "شهرداری منطقه 15",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "15"
+    },
+    {
+        "stationId": 38,
+        "stationName": "شهرک چشمه- منطقه 22",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "22"
+    },
+    {
+        "stationId": 39,
+        "stationName": "فرمانداری شهرری- منطقه 20",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "20"
+    },
+    {
+        "stationId": 41,
+        "stationName": "تربیت مدرس- منطقه 6",
+        "latitude": 35.71751,
+        "longitude": 51.38157,
+        "address": "تقاطع بزرگراه چمران و جلال آل احمد، داخل محوطه دانشگاه تربیت مدرس",
+        "region": "6"
+    },
+    {
+        "stationId": 43,
+        "stationName": "دانشگاه تهران- منطقه 6",
+        "latitude": 1,
+        "longitude": 1,
+        "address": "",
+        "region": "6"
+    }
+]

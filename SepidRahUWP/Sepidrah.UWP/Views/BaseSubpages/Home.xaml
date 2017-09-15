@@ -87,12 +87,12 @@
                    RelativePanel.AlignRightWithPanel="True"
                 RelativePanel.Below="Charts"
                         >
-                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#ff6c6c" />
-                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#e4e52d" />
-                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#e4e52d" />
-                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#e4e52d" />
-                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#14e514"/>
-                <TextBlock Text="22" Margin="10,0" Width="20" Foreground="#ff6c6c" />
+                <TextBlock Text="191" Margin="10,0" Width="20" Foreground="#ff6c6c" />
+                <TextBlock Text="100" Margin="10,0" Width="20" Foreground="#e4e52d" />
+                <TextBlock Text="80" Margin="10,0" Width="20" Foreground="#e4e52d" />
+                <TextBlock Text="120" Margin="10,0" Width="20" Foreground="#e4e52d" />
+                <TextBlock Text="20" Margin="10,0" Width="20" Foreground="#14e514"/>
+                <TextBlock Text="190" Margin="10,0" Width="20" Foreground="#ff6c6c" />
                 <TextBlock Text="70" Margin="10,0" Width="20" Foreground="#14e514"/>
             </StackPanel>
 
