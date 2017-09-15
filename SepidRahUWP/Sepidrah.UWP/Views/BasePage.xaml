@@ -11,29 +11,7 @@
     <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel>
 
-            <Grid Height="55" x:Name="Header"
-                  RelativePanel.AlignLeftWithPanel="True"
-               RelativePanel.AlignRightWithPanel="True"
-               RelativePanel.AlignTopWithPanel="True"
-                  >
-                <Button Click="bpref_Click" Content="" Style="{StaticResource pivotheaderstyle}" Height="48" HorizontalAlignment="Left" Margin="0" Padding="0" Width="50">
-                    <Button.Flyout>
-                        <Flyout>
-                            <StackPanel Orientation="Vertical" Width="40">
-                                <Button x:Name="Feedback" Tag="WOW" Click="Feedback_Click"  Background="Transparent"  HorizontalAlignment="Stretch">
-                                    <StackPanel Orientation="Horizontal">
-                                        <FontIcon FontFamily="Segoe MDL2 Assets"  Margin="0,5"  Glyph="" />
-                                    </StackPanel>
-                                </Button>
-                                
-                                
-                            </StackPanel>
-                        </Flyout>
-                    </Button.Flyout>
-                </Button>
-
-
-            </Grid>
+            
             <Pivot x:Name="Pivot" SelectionChanged="Pivot_SelectionChanged" 
                    RelativePanel.Below="Header"
               RelativePanel.AlignLeftWithPanel="True"
@@ -711,20 +689,77 @@
 
                 <PivotItem Margin="0,0,0,0" >
 
-                    <Frame x:Name="TimeLine" />
+                    <Frame x:Name="Map" />
 
                 </PivotItem>
                 <PivotItem Margin="0,0,0,0" >
 
-                    <Frame x:Name="CalView" />
+                    <Frame x:Name="Weather" />
 
                 </PivotItem>
                 <PivotItem Margin="0,0,0,0" >
 
-                    <Frame x:Name="Chats" />
+                    <Frame x:Name="Star" />
 
                 </PivotItem>
             </Pivot>
+            <Grid Height="55" x:Name="Header"
+                  RelativePanel.AlignLeftWithPanel="True"
+               RelativePanel.AlignRightWithPanel="True"
+               RelativePanel.AlignTopWithPanel="True"
+                  >
+                <Grid Background="White">
+                    
+
+                    <controls:DropShadowPanel x:Name="dropShadowPanel2" BlurRadius="20"
+                                  ShadowOpacity="0.15"
+                                  OffsetX="1"
+                                  OffsetY="1"
+                                  Color="Black"
+                                  
+                                  VerticalAlignment="Stretch"
+                                
+                                              Margin="0,0,0,0" Width="{Binding ActualWidth, ElementName=grid, Mode=TwoWay}"
+                                     >
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{Binding ActualWidth, ElementName=dropShadowPanel, Mode=TwoWay}" Background="White"/>
+                    </controls:DropShadowPanel>
+                </Grid>
+                <Grid Margin="0,0,3,0" HorizontalAlignment="Right">
+                    
+                    <Ellipse   HorizontalAlignment="Right" Height="50"  Width="50" >
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="ms-appx:///Assets/Mockups/usrimg.jpg" Stretch="UniformToFill" x:Name="avatar"  />
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <Button x:Name="butt1"  BorderBrush="Gray" BorderThickness="0" Background="Transparent" Foreground="White" 
+                  FontSize="1" Margin="0" Style="{StaticResource dotbut}"  Height="50" Width="50" HorizontalAlignment="Right" />
+
+                    
+                </Grid>
+                <StackPanel FlowDirection="RightToLeft" VerticalAlignment="Center" Margin="0,0,60,0">
+                    <TextBlock x:Name="WhereIam" FontWeight="SemiBold" FontSize="16" Text="خانه" />
+                    <TextBlock Opacity="0.8" Text="25 شهریور" />
+                </StackPanel>
+                <Button Content="" Style="{StaticResource pivotheaderstyle}" Height="48" HorizontalAlignment="Left" Margin="0" Padding="0" Width="50">
+                    <Button.Flyout>
+                        <Flyout>
+                            <StackPanel Orientation="Vertical" Width="40">
+                                <Button x:Name="Feedback" Tag="WOW" Click="Feedback_Click"  Background="Transparent"  HorizontalAlignment="Stretch">
+                                    <StackPanel Orientation="Horizontal">
+                                        <FontIcon FontFamily="Segoe MDL2 Assets"  Margin="0,5"  Glyph="" />
+                                    </StackPanel>
+                                </Button>
+
+
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+
+
+
+            </Grid>
             <Grid x:Name="NavBar" VerticalAlignment="Bottom"  Height="56"
               RelativePanel.AlignLeftWithPanel="True"
               RelativePanel.AlignRightWithPanel="True"

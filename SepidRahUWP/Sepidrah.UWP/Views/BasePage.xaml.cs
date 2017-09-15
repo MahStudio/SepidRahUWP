@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PubSub;
+using Sepidrah.UWP.Views.BaseSubpages;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,7 +27,25 @@ namespace Sepidrah.UWP.Views
         public BasePage()
         {
             this.InitializeComponent();
+            this.Subscribe<string>(Text =>
+            {
+                WhereIam.Text = Text;
+            });
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
+
+
+            #region navigation
+
+            Home.Navigate(typeof(Home));
+            Weather.Navigate(typeof(Weather));
+            Map.Navigate(typeof(Map));
+            Star.Navigate(typeof(Suggestion));
+            #endregion
+        }
+
         #region Pivot
         private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -59,7 +79,7 @@ namespace Sepidrah.UWP.Views
             btoday.BorderThickness = new Thickness(0, 0, 0, 0);
             bmonth.BorderThickness = new Thickness(0, 0, 0, 0);
             bpref.BorderThickness = new Thickness(0, 0, 0, 0);
-
+            this.Publish("خانه");
 
             Pivot.SelectedIndex = 0;
 
@@ -72,6 +92,7 @@ namespace Sepidrah.UWP.Views
             bmonth.BorderThickness = new Thickness(0, 0, 0, 0);
             bpref.BorderThickness = new Thickness(0, 0, 0, 0);
             bpref.BorderThickness = new Thickness(0, 0, 0, 0);
+            this.Publish("نقشه");
             Pivot.SelectedIndex = 1;
 
 
@@ -82,6 +103,7 @@ namespace Sepidrah.UWP.Views
             btoday.BorderThickness = new Thickness(0, 0, 0, 0);
             bmonth.BorderThickness = new Thickness(0, 0, 0, 2);
             bpref.BorderThickness = new Thickness(0, 0, 0, 0);
+            this.Publish("آب و هوا");
             Pivot.SelectedIndex = 2;
         }
         private void mpref()
@@ -90,6 +112,7 @@ namespace Sepidrah.UWP.Views
             btoday.BorderThickness = new Thickness(0, 0, 0, 0);
             bmonth.BorderThickness = new Thickness(0, 0, 0, 0);
             bpref.BorderThickness = new Thickness(0, 0, 0, 2);
+            this.Publish("پیشنهادات");
             Pivot.SelectedIndex = 3;
 
         }
