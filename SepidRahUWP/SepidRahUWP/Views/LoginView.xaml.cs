@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using SepidRahUWP.Views.RegisterView;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +30,26 @@ namespace SepidRahUWP.Views
         public LoginView()
         {
             this.InitializeComponent();
+        }
+
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async delegate
+            {
+      //          var http = new HttpClient();
+      //          http.DefaultRequestHeaders.Accept
+      //.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+      //          http.DefaultRequestHeaders.Add("apikey", App.ApiKey);
+      //          http.DefaultRequestHeaders.Add("apihash", App.APIHash);
+      //          var res = await http.PostAsync("https://xugros.net/V0/auth/signin", new StringContent(JsonConvert.SerializeObject(new { email = EmailBox.Text, pass = PasswordBox.Password }), Encoding.UTF8, "application/json"));
+                Frame.BackStack.Clear();
+                Frame.Navigate(typeof(MainPage));
+            });
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RegisterP1));
         }
     }
 }

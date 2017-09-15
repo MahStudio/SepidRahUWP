@@ -20,7 +20,7 @@
 
         <Grid x:Name="LoginGrid" Grid.Row="1">
             <StackPanel x:Name="LoginBoxesStack" VerticalAlignment="Center" Padding="10,0">
-                <TextBox x:Name="UsernameBox" Header="Username" PlaceholderText="Enter your username">
+                <TextBox x:Name="EmailBox" Header="Email" PlaceholderText="Enter your Email address">
 
                 </TextBox>
                 <PasswordBox x:Name="PasswordBox" Header="Password" PlaceholderText="Enter your Password">
@@ -34,14 +34,14 @@
                 <TextBlock Text="Do not registered yet?" VerticalAlignment="Center">
                     
                 </TextBlock>
-                <HyperlinkButton Content="Register now" VerticalAlignment="Center">
+                <HyperlinkButton Content="Register now" VerticalAlignment="Center" Click="HyperlinkButton_Click">
                     
                 </HyperlinkButton>
             </StackPanel>
         </Grid>
         
         <Grid x:Name="LoginButtonGrid" Grid.Row="3" BorderThickness="0,3,0,0" BorderBrush="LightBlue">
-            <Button x:Name="LoginButton" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Login"/>
+            <Button x:Name="LoginButton" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Login" Click="LoginButton_Click"/>
         </Grid>
 
     </Grid>

@@ -22,6 +22,9 @@ namespace SepidRahUWP
     /// </summary>
     sealed partial class App : Application
     {
+        public static readonly string ApiKey = "Sepidrah_UWP";
+        public static readonly string APIHash = "53d6754fb254783d26f8b3224c6719897159420aa33ab3e439306af8c1e9c464";
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
