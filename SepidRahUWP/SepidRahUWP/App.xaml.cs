@@ -33,7 +33,6 @@ namespace SepidRahUWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            AvatarHelper.GenerateAvatar("ngame1390@live.com");
         }
 
         /// <summary>
