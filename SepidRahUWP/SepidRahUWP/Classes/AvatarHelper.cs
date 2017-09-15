@@ -1,23 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
-using Windows.Storage.Streams;
-using System.Threading.Tasks;
-using Windows.Storage.Streams;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
 class AvatarHelper
 {
-    public static BitmapImage GenerateAvatar()
+    public static BitmapImage GenerateAvatar(string email = null)
     {
-        var em = Windows.Storage.ApplicationData.Current.LocalSettings.Values["email"].ToString();
-        var hash = CalculateMD5Hash(em);
-        return new BitmapImage(new Uri($"https://www.gravatar.com/avatar/{hash}", UriKind.RelativeOrAbsolute));
+        if(email == null)
+        {
+            try
+            {
+                var em = Windows.Storage.ApplicationData.Current.LocalSettings.Values["email"].ToString();
+                var hash = CalculateMD5Hash(em);
+                return new BitmapImage(new Uri($"https://www.gravatar.com/avatar/{hash}", UriKind.RelativeOrAbsolute));
+            }
+            catch (Exception ex)
+            {
+                return new BitmapImage(new Uri($"ms-appx:///Assets/LockScreenLogo.scale-200.png", UriKind.RelativeOrAbsolute));
+            }
+        }
+        else
+        {
+
+            var em = email;
+            var hash = CalculateMD5Hash(em);
+            return new BitmapImage(new Uri($"https://www.gravatar.com/avatar/{hash}", UriKind.RelativeOrAbsolute));
+        }
     }
     private static string CalculateMD5Hash(string input)
 
