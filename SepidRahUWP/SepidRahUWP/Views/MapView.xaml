@@ -10,7 +10,28 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <maps:MapControl x:Name="Map" MapServiceToken="Qe4rzjfqSL7zZlp8xb8A~4o8bBFXIWVuiCUT9pX2cUg~Auk92xku8o5QuFTpMvN0_7Os9b6pREma6NBC8ojGjU0N3Eq3BBzkI9ehNfu065Wv">
-           
+            <maps:MapItemsControl x:Name="MapItems">
+                <!--<maps:MapItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button x:Name="mapItemButton" Click="mapItemButton_Click" Background="Transparent">
+                            <StackPanel>
+                                <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                    <TextBlock Text="{Binding DisplayName}"/>
+                                </Border>
+                                <Image Source="{Binding ImageSourceUri}"
+                                               maps:MapControl.NormalizedAnchorPoint="{Binding NormalizedAnchorPoint}"
+                                               maps:MapControl.Location="{Binding Location}">
+                                    <Image.Transitions>
+                                        <TransitionCollection>
+                                            <EntranceThemeTransition/>
+                                        </TransitionCollection>
+                                    </Image.Transitions>
+                                </Image>
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </maps:MapItemsControl.ItemTemplate>-->
+            </maps:MapItemsControl>
         </maps:MapControl>
     </Grid>
 </Page>

@@ -12,6 +12,7 @@ using Windows.Devices.Geolocation.Geofencing;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -31,6 +32,13 @@ namespace SepidRahUWP.Views
     /// </summary>
     public sealed partial class MapView : Page
     {
+        public class PointOfInterest
+        {
+            public string DisplayName { get; set; }
+            public Geopoint Location { get; set; }
+            public Uri ImageSourceUri { get; set; }
+            public Point NormalizedAnchorPoint { get; set; }
+        }
         public class StationInfo
         {
             public int stationId { get; set; }
@@ -58,49 +66,30 @@ namespace SepidRahUWP.Views
                 case GeolocationAccessStatus.Allowed:
                     Geolocator geolocator = new Geolocator() { DesiredAccuracy = PositionAccuracy.High };
                     // Carry out the operation.
-                    Geoposition pos = await geolocator.GetGeopositionAsync();
+                    //Geoposition pos = await geolocator.GetGeopositionAsync();
 
-                    Geopoint myPoint = new Geopoint(new BasicGeoposition() { Latitude = pos.Coordinate.Latitude, Longitude = pos.Coordinate.Longitude });
-                    MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "My position", ZIndex = 0 };
-                    // add to map and center it
-                    Map.MapElements.Add(myPOI);
-                    Map.Center = myPoint;
-                    Map.ZoomLevel = 10;
+                    //Geopoint myPoint = new Geopoint(new BasicGeoposition() { Latitude = pos.Coordinate.Latitude, Longitude = pos.Coordinate.Longitude });
+                    //MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "My position" };
+                    //// add to map and center it
+                    //Map.MapElements.Add(myPOI);
+                    //Map.Center = myPoint;
                     var sf = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DataSampleProvider/json.txt", UriKind.RelativeOrAbsolute));
                     var st = await FileIO.ReadTextAsync(sf);
                     var lst = JsonConvert.DeserializeObject<List<StationInfo>>(st);
-                    var key = 0;
+                    var pinUri = new Uri("ms-appx:///Assets/LockScreenLogo.scale-200.png");
+                    var lstpins = new List<PointOfInterest>();
+                    var pinsf = await StorageFile.GetFileFromApplicationUriAsync(pinUri);
                     foreach (var item in lst)
                     {
-                        //var p = new Geopoint(new BasicGeoposition()).GetCirclePoints(10);
-                        MapPolygon mapPolygon = new MapPolygon();
-                        mapPolygon.Path = new Geopath(new List<BasicGeoposition>() {
-                new BasicGeoposition() {Latitude = item.latitude, Longitude = item.longitude }
-
-            });
-                        Map.MapElements.Add(mapPolygon);
-
-                        var geocircle = new Geocircle(new BasicGeoposition() {Latitude = item.latitude, Longitude = item.longitude }, 200);
-                        var geofence = new Geofence(key++.ToString(), geocircle);
-                        GeofenceMonitor.Current.Geofences.Add(geofence);
-
-                        //Map.MapElements.Add(new MapIcon() { Title = item.stationName, Location = new Geopoint(new BasicGeoposition() { Latitude = item.latitude, Longitude = item.longitude }) });
+                        Map.MapElements.Add(new MapIcon()
+                        {
+                            Image = RandomAccessStreamReference.CreateFromFile(pinsf),
+                            Title = item.stationName,
+                            Location = new Geopoint(new BasicGeoposition() { Latitude = item.latitude, Longitude = item.longitude }),
+                        });
                     }
-                    var color = Colors.Green;
-                    color.A = 80;
-                    foreach (var pointlist in GeofenceMonitor.Current.GetFenceGeometries())
-                    {
-                        //var shape = new MapPolygon
-                        //{
-                        //    FillColor = color,
-                        //    Path = pointlist.ToLocationCollection()
-                        //};
-                        //fenceLayer.Shapes.Add(shape);
-                    }
-
-
                     break;
-
+                    
                 case GeolocationAccessStatus.Denied:
                     break;
 
@@ -108,7 +97,11 @@ namespace SepidRahUWP.Views
                     break;
             }
         }
-        
+
+        private void mapItemButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
-  
+
 }
