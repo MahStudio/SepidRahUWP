@@ -5,6 +5,7 @@
     xmlns:local="using:Sepidrah.UWP.Views.BaseSubpages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
     xmlns:charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
     mc:Ignorable="d" FontFamily="/Fonts/IRANSans-Medium-web.ttf#IRANSans">
 
@@ -82,7 +83,7 @@
 
 
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+            <StackPanel x:Name="stats" Orientation="Horizontal" HorizontalAlignment="Center"
                          RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
                 RelativePanel.Below="Charts"
@@ -95,8 +96,21 @@
                 <TextBlock Text="190" Margin="10,0" Width="20" Foreground="#ff6c6c" />
                 <TextBlock Text="70" Margin="10,0" Width="20" Foreground="#14e514"/>
             </StackPanel>
+                <Grid Margin="0,10,0,0"
+                    RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.Below="stats"
+                      Height="200"
+                    >
+                    <maps:MapControl x:Name="MyMap" MapServiceToken="Qe4rzjfqSL7zZlp8xb8A~4o8bBFXIWVuiCUT9pX2cUg~Auk92xku8o5QuFTpMvN0_7Os9b6pREma6NBC8ojGjU0N3Eq3BBzkI9ehNfu065Wv">
+                        <maps:MapItemsControl x:Name="MapItems">
+
+                        </maps:MapItemsControl>
+                    </maps:MapControl>
+                </Grid>
 
 
+            
 
 
 
