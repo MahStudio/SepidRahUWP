@@ -33,6 +33,7 @@ namespace SepidRahUWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            CurrentWeather.GetWeather();
         }
 
         /// <summary>

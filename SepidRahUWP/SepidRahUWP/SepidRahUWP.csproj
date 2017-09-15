@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\AvatarHelper.cs" />
+    <Compile Include="Classes\CurrentWeather.cs" />
     <Compile Include="Classes\MapHelper - geofancingE.cs" />
     <Compile Include="Classes\MapHelper - geofancing.cs" />
     <Compile Include="Classes\MapHelper.cs" />

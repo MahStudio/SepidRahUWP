@@ -40,7 +40,7 @@ class AvatarHelper
 
         {
 
-            sb.Append(hash[i].ToString(“X2”));
+            sb.Append(hash[i].ToString("X2"));
 
         }
 
