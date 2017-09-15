@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -62,11 +63,12 @@ namespace Sepidrah.UWP.Views.BaseSubpages
                     Geoposition pos = await geolocator.GetGeopositionAsync();
 
                     Geopoint myPoint = new Geopoint(new BasicGeoposition() { Latitude = pos.Coordinate.Latitude, Longitude = pos.Coordinate.Longitude });
-                    MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "My position" };
+                    MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "موقعیت شما" };
                     //// add to map and center it
                     MyMap.MapElements.Add(myPOI);
                     MyMap.Center = myPoint;
                     MyMap.ZoomLevel = 13;
+                    MyMap.MapElementClick += MyMap_MapElementClick;
                     var sf = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DataSampleProvider/json.txt", UriKind.RelativeOrAbsolute));
                     var st = await FileIO.ReadTextAsync(sf);
                     var lst = JsonConvert.DeserializeObject<List<StationInfo>>(st);
@@ -90,6 +92,16 @@ namespace Sepidrah.UWP.Views.BaseSubpages
                 case GeolocationAccessStatus.Unspecified:
                     break;
             }
+        }
+
+        private async void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
+        {
+            var sf = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DataSampleProvider/json.txt"));
+            var Txt = await FileIO.ReadTextAsync(sf);
+            var sts = JsonConvert.DeserializeObject<List<StationInfo>>(Txt);
+            float X =(float) args.Location.Position.Latitude;
+            float Y = (float)args.Location.Position.Longitude;
+            //Debug.WriteLine(sts.Where(x => x.latitude == X && x.longitude == Y).FirstOrDefault().address);
         }
 
         private void mapItemButton_Click(object sender, RoutedEventArgs e)

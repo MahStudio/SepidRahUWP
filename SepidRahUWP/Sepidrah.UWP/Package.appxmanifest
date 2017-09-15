@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Sepidrah.UWP.App">
-      <uap:VisualElements DisplayName="Sepidrah.UWP" Square150x150Logo="Assets\Tiles\Square150x150Logo.png" Square44x44Logo="Assets\Tiles\Square44x44Logo.png" Description="Sepidrah.UWP" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="Sepidrah" Square150x150Logo="Assets\Tiles\Square150x150Logo.png" Square44x44Logo="Assets\Tiles\Square44x44Logo.png" Description="Sepidrah.UWP" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Tiles\Wide310x150Logo.png" ShortName="Sepidrah" Square310x310Logo="Assets\Tiles\LargeTile.png" Square71x71Logo="Assets\Tiles\SmallTile.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="wide310x150Logo" />
