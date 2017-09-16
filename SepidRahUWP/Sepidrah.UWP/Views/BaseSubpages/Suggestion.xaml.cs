@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Sepidrah.UWP.Entities;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +24,13 @@ namespace Sepidrah.UWP.Views.BaseSubpages
     /// </summary>
     public sealed partial class Suggestion : Page
     {
+        public ObservableCollection<NameValueItem> Items { get; set; }
         public Suggestion()
         {
             this.InitializeComponent();
+            Items = new ObservableCollection<NameValueItem>();
+            Items.Add(new NameValueItem() {Name="پارک آزادگان",Value="2 ساعت" });
+            Items.Add(new NameValueItem() { Name = "پارک جمشیدیه", Value = "1 ساعت" });
         }
     }
 }

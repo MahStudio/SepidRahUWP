@@ -24,7 +24,7 @@
                 RelativePanel.Below="txt1"
                 >
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Orientation="Horizontal">
-                    <TextBlock Foreground="#f2de33" Margin="0,10,0,0" FontSize="25" VerticalAlignment="Center" Text="سالم"/>
+                    <TextBlock Foreground="#f2de33" Margin="0,0,3,0" FontSize="25" VerticalAlignment="Center" Text="سالم"/>
                     <TextBlock Foreground="#f2de33"  FontSize="50" VerticalAlignment="Center" Text="66"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
