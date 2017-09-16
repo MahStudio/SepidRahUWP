@@ -59,7 +59,7 @@ namespace Sepidrah.UWP.Classes
             public int code { get; set; }
         }
 
-        public static async Task<Rootobject> GetWeather(string city = "tehran")
+        public async Task<Rootobject> GetWeather(string city = "tehran")
         {
             var http = new HttpClient();
             var rs = await http.GetStringAsync($"http://api.apixu.com/v1/current.json?key=ebcd330af94e447495675712171509&q={city}");

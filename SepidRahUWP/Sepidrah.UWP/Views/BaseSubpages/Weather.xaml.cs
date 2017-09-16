@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sepidrah.UWP.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,15 @@ namespace Sepidrah.UWP.Views.BaseSubpages
         public Weather()
         {
             this.InitializeComponent();
+          
+           // Do();
         }
+
+        //private async void Do(){
+        //    CurrentWeather cw = new CurrentWeather();
+        //    await cw.GetWeather();
+
+
+        //}
     }
 }
