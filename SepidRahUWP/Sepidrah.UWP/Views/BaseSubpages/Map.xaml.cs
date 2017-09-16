@@ -12,6 +12,7 @@ using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
@@ -30,6 +31,8 @@ namespace Sepidrah.UWP.Views.BaseSubpages
     /// </summary>
     public sealed partial class Map : Page
     {
+        private List<StationInfo> lst;
+
         public class PointOfInterest
         {
             public string DisplayName { get; set; }
@@ -46,12 +49,27 @@ namespace Sepidrah.UWP.Views.BaseSubpages
             public string address { get; set; }
             public string region { get; set; }
         }
+
+        public class StationDetails
+        {
+            public int stationId { get; set; }
+            public int? co { get; set; }
+            public int? o3 { get; set; }
+            public int? n02 { get; set; }
+            public int? s02 { get; set; }
+
+            public int? aqi { get; set; }
+        }
+
         public Map()
         {
+            //GoogleMap.DataSource = new Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource("http://mt1.google.com/vt/lyrs=m&amp;x={x}&amp;y={y}&amp;z={zoomlevel}");
             this.InitializeComponent();
             this.Loaded += MapView_Loaded;
             MyMap.MapServiceToken = "AIzaSyCS5gpejHZIpgK7StAfFCcTqZ8cQsuHVnw";
+            //Map.TileSources.Add(new MapTileSource() { DataSource = new HttpMapTileDataSource("http://mt1.google.com/vt/lyrs=m&amp;x={x}&amp;y={y}&amp;z={z};" + "?key=AIzaSyCS5gpejHZIpgK7StAfFCcTqZ8cQsuHVnw") });
         }
+
         private async void MapView_Loaded(object sender, RoutedEventArgs e)
         {
             var accessStatus = await Geolocator.RequestAccessAsync();
@@ -63,18 +81,18 @@ namespace Sepidrah.UWP.Views.BaseSubpages
                     Geoposition pos = await geolocator.GetGeopositionAsync();
 
                     Geopoint myPoint = new Geopoint(new BasicGeoposition() { Latitude = pos.Coordinate.Latitude, Longitude = pos.Coordinate.Longitude });
-                    MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "موقعیت شما" };
+                    MapIcon myPOI = new MapIcon { Location = myPoint, NormalizedAnchorPoint = new Point(0.5, 1.0), Title = "My position" };
                     //// add to map and center it
                     MyMap.MapElements.Add(myPOI);
                     MyMap.Center = myPoint;
                     MyMap.ZoomLevel = 13;
-                    MyMap.MapElementClick += MyMap_MapElementClick;
                     var sf = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DataSampleProvider/json.txt", UriKind.RelativeOrAbsolute));
                     var st = await FileIO.ReadTextAsync(sf);
-                    var lst = JsonConvert.DeserializeObject<List<StationInfo>>(st);
+                    lst = JsonConvert.DeserializeObject<List<StationInfo>>(st);
                     var pinUri = new Uri("ms-appx:///Assets/pin.png");
                     var lstpins = new List<PointOfInterest>();
                     var pinsf = await StorageFile.GetFileFromApplicationUriAsync(pinUri);
+                    MyMap.MapElementClick += Map_MapElementClick;
                     foreach (var item in lst)
                     {
                         MyMap.MapElements.Add(new MapIcon()
@@ -83,6 +101,7 @@ namespace Sepidrah.UWP.Views.BaseSubpages
                             Title = item.stationName,
                             Location = new Geopoint(new BasicGeoposition() { Latitude = item.latitude, Longitude = item.longitude }),
                         });
+                       
                     }
                     break;
 
@@ -94,14 +113,22 @@ namespace Sepidrah.UWP.Views.BaseSubpages
             }
         }
 
-        private async void MyMap_MapElementClick(MapControl sender, MapElementClickEventArgs args)
+        private async void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args)
         {
-            var sf = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DataSampleProvider/json.txt"));
-            var Txt = await FileIO.ReadTextAsync(sf);
-            var sts = JsonConvert.DeserializeObject<List<StationInfo>>(Txt);
-            float X =(float) args.Location.Position.Latitude;
+            var element = args.MapElements[0] as MapIcon;
             float Y = (float)args.Location.Position.Longitude;
-            //Debug.WriteLine(sts.Where(x => x.latitude == X && x.longitude == Y).FirstOrDefault().address);
+
+            //var end = lst.Where(x => x.latitude == X && x.longitude == Y).FirstOrDefault().stationId;
+            var GetId = lst.Where(x => x.stationName == element.Title).FirstOrDefault().stationId;
+
+            var sf = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///DataSampleProvider/result.txt", UriKind.RelativeOrAbsolute));
+            var st = await FileIO.ReadTextAsync(sf);
+            var lst2 = JsonConvert.DeserializeObject<List<StationDetails>>(st);
+
+            var res = lst2.Where(x => x.stationId == GetId).FirstOrDefault();
+            
+            await new MessageDialog("CO:" + res.co.ToString() + " / " + "O3:" + res.o3.ToString() + " / " + "n02:" + res.n02.ToString()).ShowAsync();
+
         }
 
         private void mapItemButton_Click(object sender, RoutedEventArgs e)
@@ -109,4 +136,5 @@ namespace Sepidrah.UWP.Views.BaseSubpages
 
         }
     }
+
 }

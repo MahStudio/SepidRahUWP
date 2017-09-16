@@ -6,14 +6,22 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:an="using:Microsoft.Toolkit.Uwp.UI.Animations"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <maps:MapControl x:Name="MyMap" MapServiceToken="Qe4rzjfqSL7zZlp8xb8A~4o8bBFXIWVuiCUT9pX2cUg~Auk92xku8o5QuFTpMvN0_7Os9b6pREma6NBC8ojGjU0N3Eq3BBzkI9ehNfu065Wv">
+        <ScrollViewer>
+            <Grid>
+                <maps:MapControl Height="{Binding ActualHeight, ElementName=grid, Mode=TwoWay}"
+            an:ParallaxService.VerticalMultiplier="-0.8" x:Name="MyMap" MapServiceToken="Qe4rzjfqSL7zZlp8xb8A~4o8bBFXIWVuiCUT9pX2cUg~Auk92xku8o5QuFTpMvN0_7Os9b6pREma6NBC8ojGjU0N3Eq3BBzkI9ehNfu065Wv"
+                        >
             <maps:MapItemsControl x:Name="MapItems">
 
             </maps:MapItemsControl>
         </maps:MapControl>
+                
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
