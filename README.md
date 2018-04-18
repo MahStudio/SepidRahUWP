@@ -3,6 +3,7 @@
 A climate heath application for UWP.
 
 ![image](https://user-images.githubusercontent.com/22152065/38911819-fd9278fc-42e6-11e8-9f39-22bfaa23c616.png)
+![image](https://user-images.githubusercontent.com/22152065/38917463-1b2cdaba-4300-11e8-9675-b18c5ca2fae8.png)
 
 ### Build Prerequisites
 
