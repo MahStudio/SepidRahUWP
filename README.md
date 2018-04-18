@@ -7,8 +7,10 @@ A climate heath application for UWP.
 ### Build Prerequisites
 
 1. Windows 10
-2. Visual Studio 2017 (latest build) with universal windows development features installed.
+2. Visual Studio 2017 (latest build) with universal windows and web development features installed.
 3. GIT for Windows ([install from here](http://gitforwindows.org/))
+
+>Take a look at Sepidrah's back-end [HERE](https://github.com/MahStudio/SepidrahWeb)
 
 ### Authors
 
@@ -19,6 +21,6 @@ See also the list of [contributors](https://github.com/MahStudio/SepidRahUWP/con
 
 - [AliNGame](https://github.com/NGame1) : Software design and developement
 - [Mohsen Seifi](https://github.com/mohsens22) : Software design and developement
-- [Mohammad Alidoost](https://www.instagram.com/mr.alidoost/) : UI Design
+- [Mohammad R. Alidoost](https://www.instagram.com/mr.alidoost/) : UI Design
  
-Special thanks to Pouria Ryahi and MHBayan.
+Special thanks to Pouria Ryahi and Mohammad H. Bayan.
